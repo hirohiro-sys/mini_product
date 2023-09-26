@@ -1,5 +1,5 @@
 # mini_product
-<!--
+<!---
 <img width="653" alt="スクリーンショット 2023-09-26 20 57 32" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/1fae77a1-c411-4fdd-9035-35d5ed9445b8">
 -->
 
