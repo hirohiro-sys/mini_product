@@ -1,9 +1,13 @@
+<!--
+どのページでも共通して使いまわせるデザインを実装するファイル
+-->
+
 {% load static %}
 {% load django_bootstrap5 %}
 <html>
 <head>
     <meta charset="utf-8">
-    <title>PyCoderShare</title>
+    <title>StudentLink</title>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <link rel="stylesheet" href="{% static 'snippets/css/style.css' %}">
@@ -14,7 +18,7 @@
 
 <nav class="navbar navbar-expand flex-md-row navbar-dark bg-dark">
     <div class="container justify-content-between">
-        <a href="/" class="navbar-brand"><i>-PyCoderShare-</i></a>
+        <a href="/" class="navbar-brand"><i>-StudentLink-</i></a>
         <ul class="navbar-nav mr-md-2">
             {% if user.is_authenticated %}
             <!---- disabledでhrefを無効化できる -->
