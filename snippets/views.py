@@ -7,6 +7,9 @@ from snippets.forms import SnippetForm, CommentForm
 from snippets.models import Snippet, Comment
 
 
+
+
+
 def top(request):
     snippets = Snippet.objects.all()
     context = {"snippets": snippets}

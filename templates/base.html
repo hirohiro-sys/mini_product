@@ -9,12 +9,16 @@
     <link rel="stylesheet" href="{% static 'snippets/css/style.css' %}">
     {% block extraheader %}{% endblock %}
 </head>
-<body>
+<body >
+
+
 <nav class="navbar navbar-expand flex-md-row navbar-dark bg-dark">
     <div class="container justify-content-between">
-        <a href="/" class="navbar-brand">Djangoスニペット</a>
+        <a href="/" class="navbar-brand"><i>-StudentLink-</i></a>
         <ul class="navbar-nav mr-md-2">
             {% if user.is_authenticated %}
+            <!---- disabledでhrefを無効化できる -->
+            <li class="nav-item"><a class="nav-link text-white disabled" href="" >ようこそ！ {{user.username}}さん</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">ログアウト</a></li>
             {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">ログイン</a></li>
