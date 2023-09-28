@@ -3,12 +3,17 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils.decorators import method_decorator
-from django.views import View
+from django.views.generic import View
 from django.core.exceptions import PermissionDenied
+
+from django.core.paginator import Paginator
+
 from snippets.forms import SnippetForm, CommentForm
 from snippets.models import Snippet, Comment
 
 class TopView(View):
+
+
     def get(self, request):
         snippets = Snippet.objects.all()
         context = {"snippets": snippets}
