@@ -3,9 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 
+
 from snippets.forms import SnippetForm, CommentForm
 from snippets.models import Snippet, Comment
-
 
 
 
@@ -85,3 +85,5 @@ def comment_new(request, snippet_id):
         messages.add_message(request, messages.ERROR,
                              "コメントの投稿に失敗しました。")
     return redirect('snippet_detail', snippet_id=snippet_id)
+
+
