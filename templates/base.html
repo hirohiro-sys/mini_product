@@ -14,7 +14,16 @@
     {% block extraheader %}{% endblock %}
 </head>
 <body >
+    <style>
+    
 
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        } 
+
+    </style>
 
 <nav class="navbar navbar-expand flex-md-row navbar-dark bg-dark">
     <div class="container justify-content-between">
@@ -35,6 +44,7 @@
     <div class="container">
         {% block main %}{% endblock %}
     </div>
+    {% include "snippets/snippets2/footer.html" %}
 </main>
 </body>
 </html>
