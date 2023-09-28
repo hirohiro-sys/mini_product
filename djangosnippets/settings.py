@@ -131,3 +131,4 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 # ログアウトした時トップページに遷移
 LOGOUT_REDIRECT_URL = '/'
+
