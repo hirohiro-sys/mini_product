@@ -2,6 +2,7 @@ from typing import Any
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models.query import QuerySet
+from django.db.models import Q 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils.decorators import method_decorator
@@ -13,14 +14,19 @@ from snippets.forms import SnippetForm, CommentForm
 from snippets.models import Snippet, Comment
 
 class TopView(ListView):
-    model = Snippet  # モデルを指定
+    model = Snippet
     template_name = "snippets/top.html"
     context_object_name = "snippets"
     paginate_by = 5
 
     def get_queryset(self):
-        # スニペットを更新日でソートして返す
-        return Snippet.objects.all().order_by('-updated_at')
+        queryset = Snippet.objects.all().order_by('-updated_at')
+        query = self.request.GET
+
+        if q := query.get('q'):
+            queryset = queryset.filter(Q(code__icontains=q)|Q(title__icontains=q))
+
+        return queryset.order_by('-created_at')
 
 
     # def get(self, request):
