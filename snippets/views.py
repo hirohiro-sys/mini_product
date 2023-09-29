@@ -1,23 +1,37 @@
+from typing import Any
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils.decorators import method_decorator
-from django.views.generic import View
+from django.views.generic import View, ListView
 from django.core.exceptions import PermissionDenied
 
-from django.core.paginator import Paginator
 
 from snippets.forms import SnippetForm, CommentForm
 from snippets.models import Snippet, Comment
 
-class TopView(View):
+class TopView(ListView):
+    model = Snippet  # モデルを指定
+    template_name = "snippets/top.html"
+    context_object_name = "snippets"
+    paginate_by = 5
+
+    def get_queryset(self):
+        # スニペットを更新日でソートして返す
+        return Snippet.objects.all().order_by('-updated_at')
 
 
-    def get(self, request):
-        snippets = Snippet.objects.all()
-        context = {"snippets": snippets}
-        return render(request, "snippets/top.html", context)
+    # def get(self, request):
+    #     snippets = Snippet.objects.all()
+    #     context = {"snippets": snippets}
+    #     return render(request, "snippets/top.html", context)
+    
+    # def get_queryset(self):
+    #     snippets = super().get_queryset()
+    #     return snippets.order_by('-updated_at')
+    
 
 class SnippetNewView(View):
     @method_decorator(login_required)

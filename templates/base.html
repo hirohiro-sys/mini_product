@@ -14,10 +14,11 @@
     {% block extraheader %}{% endblock %}
 </head>
 <body >
-
+    
+    
     <style>
-
-
+        
+        
         footer {
             position: absolute;
             bottom: 0;
@@ -40,6 +41,15 @@
         </ul>
     </div>
 </nav>
+
+<!-- 検索機能のhtml -->
+<div style="text-align: center; margin-top: 20px;">
+    <form action="" method="get">
+        <input type="text" name="q" placeholder="検索キーワードを入力" style="width: 30%;">
+        <button type="submit">検索</button>
+    </form>
+</div>
+
 <main>
     <div class="container">
         {% block main %}{% endblock %}

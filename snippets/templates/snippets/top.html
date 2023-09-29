@@ -24,9 +24,12 @@
         <th><a href="{% url 'snippet_detail' snippet.id %}">{{ snippet.title }}</a></th>
     </tr>
     {% endfor %}
-    </tbody>
-    
+</tbody>
+
 </table>
+<div class="text-center">
+    {% include 'snippets/snippets2/pagination.html' %}
+</div>
 
 {% else %}
 <p>スレッドはまだ投稿されていません。</p>
