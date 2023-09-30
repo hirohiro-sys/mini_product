@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.utils.decorators import method_decorator
-from django.views.generic import View, ListView,CreateView, UpdateView
+from django.views.generic import View, ListView
 from django.urls import reverse_lazy
 from django.core.exceptions import PermissionDenied
 
