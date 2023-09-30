@@ -1,7 +1,9 @@
 # mini_product
 
 ### -画像等-
-
+<!--
+<img width="647" alt="スクリーンショット 2023-09-30 10 42 14" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/709b4b99-45e3-45ea-bbf0-19bbd2173348">
+-->
 ### -URL-
 
 ### -このプロダクトの目的-
