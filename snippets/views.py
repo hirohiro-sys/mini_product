@@ -32,21 +32,24 @@ class TopView(ListView):
         return queryset.order_by('-updated_at')
     
 
-@method_decorator(login_required, name='dispatch')
-class SnippetNewView(CreateView):
-    model = Snippet
-    form_class = SnippetForm
-    template_name = 'snippets/snippet_new.html'
-    success_url = reverse_lazy('snippet_detail')  # Redirect to detail view after successful creation
+class SnippetNewView(View):
+    @method_decorator(login_required)  # ログインが必要な場合はこのデコレータを使う
+    def get(self, request):
+        form = SnippetForm()
+        return render(request, "snippets/snippet_new.html", {'form': form})
 
-    def form_valid(self, form):
-        form.instance.created_by = self.request.user
-        messages.success(self.request, "スニペットを作成しました。")
-        return super().form_valid(form)
-
-    def form_invalid(self, form):
-        messages.error(self.request, "スニペットの作成に失敗しました。")
-        return super().form_invalid(form)
+    @method_decorator(login_required)  # ログインが必要な場合はこのデコレータを使う
+    def post(self, request):
+        form = SnippetForm(request.POST)
+        if form.is_valid():
+            snippet = form.save(commit=False)
+            snippet.created_by = request.user
+            snippet.save()
+            messages.add_message(request, messages.SUCCESS, "スニペットを作成しました。")
+            return redirect('snippet_detail', snippet_id=snippet.pk)
+        else:
+            messages.add_message(request, messages.ERROR, "スニペットの作成に失敗しました。")
+            return render(request, "snippets/snippet_new.html", {'form': form})
         
 
 class SnippetEditView(View):

@@ -4,6 +4,7 @@ from snippets.views import (
     SnippetEditView,
     SnippetDetailView,
     CommentNewView,
+
 )
 
 urlpatterns = [
