@@ -134,3 +134,13 @@ LOGIN_REDIRECT_URL = '/'
 # ログアウトした時トップページに遷移
 LOGOUT_REDIRECT_URL = '/'
 
+
+# メッセージフレームワーク
+from django.contrib import messages
+
+MESSAGE_TAGS = {
+    messages.INFO: 'alert alert-info',
+    messages.SUCCESS: 'alert alert-success',
+    messages.WARNING: 'alert alert-warning',
+    messages.ERROR: 'alert alert-danger',
+}
