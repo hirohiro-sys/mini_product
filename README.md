@@ -46,7 +46,7 @@ chatgptなども活用して解決していきました。
 あとは管理画面を少し見やすくしたり、モデルを調整したり、ORMを使ってみるなど
 
 ## <このアプリ開発のために学習した技術や使用した技術>
-gitとgithub, linuxコマンド, sqlとデータベース, python, django, html,css,js, webの仕組み, 基本情報技術者等
+gitとgithub, linuxコマンド, sqlとデータベース, python, django, html,css,js, webの仕組み, 基本情報技術者(基本的なコンピュータサイエンス)等
 
 *それぞれ書籍や入門教材を使用して学習
 
