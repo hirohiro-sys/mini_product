@@ -9,7 +9,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import View, ListView
 from django.urls import reverse_lazy
 from django.core.exceptions import PermissionDenied
-
+from urllib.parse import quote
 
 from snippets.forms import SnippetForm, CommentForm
 from snippets.models import Snippet, Comment
@@ -109,3 +109,19 @@ class CommentNewView(View):
             messages.add_message(request, messages.ERROR,
                                  "コメントの投稿に失敗しました。")
         return redirect('snippet_detail', snippet_id=snippet_id)
+    
+
+# エラーページカスタマイズのビュー
+def handler400(request, exception):
+    return render(request, 'erros/400.html', {}, status=400)
+
+def handler403(request, exception):
+    return render(request, 'erros/403.html', {}, status=403)
+
+def handler404(request, exception):
+    context = {"request_path": quote(request.path)}
+    return render(request, 'erros/404.html', {}, status=404)
+
+def custom_500(request):
+    # カスタムの500エラーページを表示するためのコードを追加
+    return render(request, 'custom_500.html', status=500)
