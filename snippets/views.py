@@ -20,16 +20,17 @@ class TopView(ListView):
     model = Snippet
     template_name = "snippets/top.html"
     context_object_name = "snippets"
-    paginate_by = 6
+    paginate_by = 8
 
     def get_queryset(self):
-        queryset = Snippet.objects.all().order_by('-updated_at')
-        query = self.request.GET
+         queryset = Snippet.objects.all().order_by('-updated_at')
+         query = self.request.GET
 
-        if q := query.get('q'):
-            queryset = queryset.filter(Q(code__icontains=q)|Q(title__icontains=q))
+         
+         if q := query.get('q'):
+             queryset = queryset.filter(Q(code__icontains=q)|Q(title__icontains=q))
 
-        return queryset.order_by('-updated_at')
+         return queryset.order_by('-updated_at')
     
 
 class SnippetNewView(View):
