@@ -6,3 +6,20 @@ media
 # files
 db.sqlite3
 .env
+
+
+
+# Python
+*.pyc
+
+# Virtual Environment
+venv/
+
+# Log files
+*.log
+
+# Local settings
+local_settings.py
+
+# macOS-specific files
+.DS_Store
