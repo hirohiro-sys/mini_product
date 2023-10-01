@@ -1,5 +1,9 @@
 # mini_product
 
+READMEはQiitaの以下の記事を参考に作成しました(まだ学習段階の小規模なアプリのため、ER図やインフラ構成図は作ってません)。
+
+→[読みたくなるREADMEを書くためのコツ](https://qiita.com/ren_ichinose/items/15b5a156ae43ea2b3425)
+
 
 <img width="647" alt="スクリーンショット 2023-09-30 10 42 14" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/709b4b99-45e3-45ea-bbf0-19bbd2173348">
 
