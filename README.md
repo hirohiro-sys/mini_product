@@ -8,7 +8,9 @@ READMEはQiitaの以下の記事を参考に作成しました(まだ学習段�
 <img width="647" alt="スクリーンショット 2023-09-30 10 42 14" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/709b4b99-45e3-45ea-bbf0-19bbd2173348">
 
 
-まだ人に使ってもらえる物ではありませんが一応URLも貼っておきます。といきたいことろなのですが現在初めてのデプロイに手こずってます(pythonanywhereとrenderで挑戦中)。代わりにREADMEの1番下で画面遷移図的なのを貼っておきます。
+まだセキュリティ面の知識や人に使ってもらうことを意識したコードではないため、デプロイ等は行なってません。どんなアプリかのイメージを持ってもらうためにトップページの画像だけ貼っておきます。
+
+<img width="1675" alt="スクリーンショット 2023-10-02 10 39 11" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/8b567c77-d181-4d13-9779-d4a5df4894ce">
 
 
 ## <学習の目的>
@@ -73,19 +75,3 @@ gitとgithub, linuxコマンド, sqlとデータベース, python, django, html,
 
 
 などを目標に学習を継続していこう思う。
-
-
-
-<img width="1675" alt="スクリーンショット 2023-10-02 10 39 11" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/8b567c77-d181-4d13-9779-d4a5df4894ce">
-
-<img width="1677" alt="スクリーンショット 2023-10-01 23 42 00" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/1ce6aff7-d15b-41bf-a06b-82bbd6adc769">
-
-<img width="1663" alt="スクリーンショット 2023-10-01 23 41 40" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/13386307-c601-47c0-a388-06ba8a134a23">
-
-<img width="1661" alt="スクリーンショット 2023-10-01 23 41 26" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/5b3ba50e-e9a7-4b54-b383-c55cfcc4308c">
-
-<img width="1658" alt="スクリーンショット 2023-10-01 23 42 29" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/b5f5b8d7-3dd6-46e6-9a81-3fdf0c03fa48">
-
-<img width="1678" alt="スクリーンショット 2023-10-01 23 42 41" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/0829525d-91d5-4976-a3d8-8682cba0c869">
-
-シンプルすぎか
