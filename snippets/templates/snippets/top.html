@@ -1,52 +1,58 @@
 {% extends "base.html" %}
 
 {% block main %}
-<div class="welcome" style="background-image: url(https://tunagaru-aozoraichi.org/wp-content/uploads/2023/08/cropped-%E9%9D%92%E7%A9%BA.jpg);">
-    <h1 class="title">ようこそStudentLinkへ!</h1>
-    <p class="subtitle">あなたの悩みや共有したいことをここに投稿しよう!</p>
-    <a class="btn btn-primary" href="{% url 'snippet_new' %}">スレッドを作成する</a>
-</div>
+<style>
+    body {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeMiwYvCYAdEHjrxEe3PvzKA59CyTFintFPA&usqp=CAU);
+    }
+</style>
+<div class="card border-primary shadow" style="padding: 30px;">
+    <div class="card-body">
+        <div class="welcome" style="background-image: url(https://tunagaru-aozoraichi.org/wp-content/uploads/2023/08/cropped-%E9%9D%92%E7%A9%BA.jpg);">
+            <h1 class="card-title">ようこそStudentLinkへ!</h1>
+            <p class="card-subtitle">あなたの悩みや共有したいことをここに投稿しよう!</p>
+            <br>
+            <a class="btn btn-primary" href="{% url 'snippet_new' %}">スレッドを作成する</a>
+        </div>
 
-<!-- 検索機能のhtml -->
-<div style="text-align: center; margin-top: 20px;">
-    <form action="" method="get">
-        <input type="text" name="q" placeholder="検索キーワードを入力" style="width: 30%;">
-        <button type="submit">検索</button>
-    </form> 
+        <!-- 検索機能のhtml -->
+        <div style="text-align: center; margin-top: 20px;">
+            <form action="" method="get">
+                <input type="text" name="q" placeholder="検索キーワードを入力" style="width: 30%;">
+                <button type="submit">検索</button>
+            </form>
+        </div>
+        {% if snippets %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>投稿者</th>
+                    <th>投稿日</th>
+                    <th>タイトル</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for snippet in snippets %}
+                <tr>
+                    <td>{{ snippet.created_by.username }}</td>
+                    <td>{{ snippet.created_at }}</td>
+                    <td><a href="{% url 'snippet_detail' snippet.id %}">{{ snippet.title }}</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            {% include 'snippets/snippets2/pagination.html' %}
+        </div>
+        <br>
+        <hr>
+        <div>
+            <p>※投稿内容が荒らし・スパム行為・いやがらせ・いたずら等に該当すると管理人が判断した場合、予告なく記事を削除するなどの措置をとらせていただく場合があります。</p>
+            <P>※追加してほしい機能やアプリ改善案があればスレッドで報告してください。</P>
+        </div>
+        {% else %}
+        <p>スレッドはまだ投稿されていません。</p>
+        {% endif %}
+    </div>
 </div>
-{% if snippets %}
-<table class="table">
-    <thead>
-    <tr>
-        <th>投稿者</th>
-        <th>投稿日</th>
-        <th>タイトル</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for snippet in snippets %}
-    <tr>
-        <th>{{ snippet.created_by.username }}</th>
-        <th>{{ snippet.created_at }}</th>
-        <th><a href="{% url 'snippet_detail' snippet.id %}">{{ snippet.title }}</a></th>
-    </tr>
-    {% endfor %}
-</tbody>
-
-</table>
-<div class="text-center">
-    {% include 'snippets/snippets2/pagination.html' %}
-</div>
-<br>
-<hr>
-<div >
-    <p>※投稿内容が宣伝・荒らし・スパム行為・いやがらせ・いたずら等に該当すると管理人が判断した場合、予告なく記事を削除するなどの措置をとらせていただく場合があります。
-    </p>
-    <P>※追加してほしい機能やアプリ改善案があればスレッドで報告してください。</P>
-
-</div>
-
-{% else %}
-<p>スレッドはまだ投稿されていません。</p>
-{% endif %}
 {% endblock %}
