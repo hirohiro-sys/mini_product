@@ -20,7 +20,7 @@ class TopView(ListView):
     model = Snippet
     template_name = "snippets/top.html"
     context_object_name = "snippets"
-    paginate_by = 7
+    paginate_by = 8
 
     def get_queryset(self):
          queryset = Snippet.objects.all().order_by('-updated_at')
