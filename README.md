@@ -10,9 +10,12 @@ READMEはQiitaの以下の記事を参考に作成しました。まだ学習段
 
 <hr>
 
-トップページ画像↓ シンプルすぎか
+トップページ画像↓ 画面に収まらず二つに分けました
 
-<img width="1675" alt="スクリーンショット 2023-10-02 10 39 11" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/8b567c77-d181-4d13-9779-d4a5df4894ce">
+<img width="1672" alt="スクリーンショット 2023-10-03 21 39 46" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/a878be3b-8857-4ace-85bb-e78d614577c6">
+
+<img width="1666" alt="スクリーンショット 2023-10-03 21 40 14" src="https://github.com/hirohiro-sys/mini_product/assets/126783940/3741ab29-a56d-459e-b499-589c46018982">
+
 
 
 ## <学習の目的>
